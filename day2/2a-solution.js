@@ -2,18 +2,18 @@ let intcode = [1,12,2,3,1,1,2,3,1,3,4,3,1,5,0,3,2,1,6,19,1,9,19,23,2,23,10,27,1,
 // let intcode = [1, 0, 0, 0, 99]
 
 let intcodeReader = intcode => {
-  newCode = [...intcode]
-  for (i = 0; i < newCode.length; i += 4) {
-    if (newCode[i] == 1) {
-      newCode[newCode[i + 3]] =
-        newCode[newCode[i + 1]] + newCode[newCode[i + 2]]
-    } else if (newCode[i] == 2) {
-      newCode[newCode[i + 3]] =
-        newCode[newCode[i + 1]] * newCode[newCode[i + 2]]
-    } else if (newCode[i] == 99) {
+  n = [...intcode]
+  for (i = 0; i < n.length; i += 4) {
+    if (n[i] == 1) {
+      n[n[i + 3]] =
+        n[n[i + 1]] + n[n[i + 2]]
+    } else if (n[i] == 2) {
+      n[n[i + 3]] =
+        n[n[i + 1]] * n[n[i + 2]]
+    } else if (n[i] == 99) {
     }
   }
-  return newCode
+  return n
 }
 
 console.log(intcodeReader(intcode)[0])
